@@ -1,4 +1,4 @@
-# Aventura lui Artur⚔️
+# Aventura lui Artur ⚔️
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡌⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -17,7 +17,8 @@
 ⡬⡋⠀⠀⠀⡎⠀⠀⠀⠀⠀⢀⡊⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠃⡀⠀⠀⡐⠁
 ⠀⠈⠃⢄⠀⡅⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⡀⡓⣇⢀⢀⡀⡀⡀⡸⣀⠄⡇⠀
 ⠀⠀⠀⠀⠙⢆⠀⠀⠀⠀⡂⠀⠀⠀⠀⠀⠀⠀⢀⣀⡠⠄⠄⠂⠀⠁⠈⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠈⠋⠀⠀
-⠀⠀⠀⠀⠀⢸⡀⡀⢀⠀⠠⠀⠠⠠⠤⠒⠒⠂⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⡀⡀⢀⠀⠠⠀⠠⠠⠤⠒⠒⠂⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
+Aventura lui Artur este un joc de tip RPG în care jucătorul îl controlează pe Artur, un tânăr aventurier aflat la începutul drumului.  
+Scopul jocului este de a dezvolta abilitățile și resursele lui Artur printr-o serie de activități și decizii, fie acestea bune sau rele pentru el.
 
-Aventura lui Artur este un joc de tip RPG în care jucătorul îl controlează pe Artur, un tânăr aventurier aflat la începutul drumului. Scopul jocului este de a dezvolta abilitățile și resursele lui Artur printr-o serie de activități și decizii, fie acestea bune sau rele pentru el. 
