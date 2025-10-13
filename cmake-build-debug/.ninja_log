@@ -1,0 +1,13 @@
+# ninja log v6
+3	276	7820879367102041	build.ninja	9e13244aa150aab2
+5	476	7820828434615551	CMakeFiles/Aventura_lui_Artur.dir/HP.cpp.obj	e26e4f4af6823dec
+476	658	7820828439334656	Aventura_lui_Artur.exe	273208fb3c7eb261
+5	508	7820829288118590	CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj	c6abe35f5eec2e94
+22	926	7820821887056623	CMakeFiles/Aventura_lui_Artur.dir/Inventory.cpp.obj	cbe9d78b30e24fc0
+17	562	7820826702997511	CMakeFiles/Aventura_lui_Artur.dir/item.cpp.obj	f085289b45d1c6f6
+22	580	7820828249313089	CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj	411f0ff03816006
+19	531	7820887152164104	CMakeFiles/Aventura_lui_Artur.dir/HP.cpp.obj	e26e4f4af6823dec
+25	609	7820887152219174	CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj	411f0ff03816006
+4	579	7820888129039868	CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj	c6abe35f5eec2e94
+6	558	7820889423093585	CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj	411f0ff03816006
+559	706	7820889428626331	Aventura_lui_Artur.exe	273208fb3c7eb261
