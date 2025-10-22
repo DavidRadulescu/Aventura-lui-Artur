@@ -1,4 +1,4 @@
-#include "item.h"
+#include "Item.h"
 #include <string>
 
 Item::Item() : name(""), type(""),effectValue(0) {};
