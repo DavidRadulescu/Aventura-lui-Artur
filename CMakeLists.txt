@@ -16,6 +16,8 @@ add_executable(Aventura_lui_Artur main.cpp
 
 set(EXECUTABLE_NAME Aventura_lui_Artur)
 
+set(CI_ARTIFACT_DIR "${CMAKE_BINARY_DIR}/artifacts/bin")
+
 if (WIN32)
     set(EXEC_FILE_NAME "Aventura_lui_Artur.exe")
 else()
@@ -23,12 +25,12 @@ else()
 endif()
 
 add_custom_command(TARGET Aventura_lui_Artur POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:Aventura_lui_Artur>/artifacts/bin
+        COMMAND ${CMAKE_COMMAND} -E make_directory "${CI_ARTIFACT_DIR}"
 
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
         $<TARGET_FILE:Aventura_lui_Artur>
-        $<TARGET_FILE_DIR:Aventura_lui_Artur>/artifacts/bin/${EXEC_FILE_NAME}
-        COMMENT "Copiere executabila artifacts"
+        "${CI_ARTIFACT_DIR}/${EXEC_FILE_NAME}"
+        COMMENT "Copiere executabila"
 )
 
 
