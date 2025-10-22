@@ -3,8 +3,6 @@ project(Aventura_lui_Artur)
 
 set(CMAKE_CXX_STANDARD 26)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/artifacts/bin")
-
 add_executable(Aventura_lui_Artur main.cpp
         HP.h
         Item.cpp
@@ -14,6 +12,13 @@ add_executable(Aventura_lui_Artur main.cpp
         Player.h
         HP.cpp
         Player.cpp
+)
+
+set(EXECUTABLE_NAME Aventura_lui_Artur)
+
+add_custom_command(TARGET ${EXECUTABLE_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:${EXECUTABLE_NAME}>/artifacts/bin
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${EXECUTABLE_NAME}> $<TARGET_FILE_DIR:${EXECUTABLE_NAME}>/artifacts/bin/
 )
 
 
