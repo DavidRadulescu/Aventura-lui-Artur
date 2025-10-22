@@ -55,8 +55,8 @@ build CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj: CXX_COMPILER__Aventura_lui
   OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
   OBJECT_FILE_DIR = CMakeFiles\Aventura_lui_Artur.dir
 
-build CMakeFiles/Aventura_lui_Artur.dir/item.cpp.obj: CXX_COMPILER__Aventura_lui_Artur_unscanned_Debug C$:/Users/dannr/CLionProjects/Aventura-lui-Artur/item.cpp || cmake_object_order_depends_target_Aventura_lui_Artur
-  DEP_FILE = CMakeFiles\Aventura_lui_Artur.dir\item.cpp.obj.d
+build CMakeFiles/Aventura_lui_Artur.dir/Item.cpp.obj: CXX_COMPILER__Aventura_lui_Artur_unscanned_Debug C$:/Users/dannr/CLionProjects/Aventura-lui-Artur/Item.cpp || cmake_object_order_depends_target_Aventura_lui_Artur
+  DEP_FILE = CMakeFiles\Aventura_lui_Artur.dir\Item.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
   OBJECT_FILE_DIR = CMakeFiles\Aventura_lui_Artur.dir
@@ -87,7 +87,7 @@ build CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj: CXX_COMPILER__Aventura_l
 #############################################
 # Link the executable Aventura_lui_Artur.exe
 
-build Aventura_lui_Artur.exe: CXX_EXECUTABLE_LINKER__Aventura_lui_Artur_Debug CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/item.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Inventory.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/HP.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj
+build Aventura_lui_Artur.exe: CXX_EXECUTABLE_LINKER__Aventura_lui_Artur_Debug CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Item.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Inventory.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/HP.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir

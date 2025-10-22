@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 26)
 
 add_executable(Aventura_lui_Artur main.cpp
         HP.h
-        item.cpp
-        item.h
+        Item.cpp
+        Item.h
         Inventory.cpp
         Inventory.h
         Player.h
