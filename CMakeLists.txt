@@ -18,4 +18,8 @@ install(TARGETS Aventura_lui_Artur
         RUNTIME DESTINATION "bin"
 )
 
+install(FILES "launcher.command"
+        DESTINATION "bin"
+)
+
 
