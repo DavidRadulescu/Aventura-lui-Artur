@@ -20,6 +20,7 @@ Player::Player(const Player& other) {
     this->damage = other.damage;
     this->health = other.health;
     this->inventory = other.inventory;
+    this->intelligence = other.intelligence;
 }
 Player& Player::operator = (const Player& other) {
     if (this != &other) {
@@ -30,6 +31,7 @@ Player& Player::operator = (const Player& other) {
         this->damage = other.damage;
         this->health = other.health;
         this->inventory = other.inventory;
+        this->intelligence = other.intelligence;
     }
     return *this;
 }
