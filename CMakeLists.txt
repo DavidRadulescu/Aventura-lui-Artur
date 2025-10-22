@@ -13,3 +13,5 @@ add_executable(Aventura_lui_Artur main.cpp
         HP.cpp
         Player.cpp
 )
+
+install(TARGETS Aventura_lui_Artur DESTINATION artifacts/bin)
