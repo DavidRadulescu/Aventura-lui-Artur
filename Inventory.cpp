@@ -61,9 +61,11 @@ bool Inventory::showInventory() const {
     return true;
 }
 
+/**
 int Inventory::getItemCount() const {
     return (int)this->items.size();
 }
+**/
 
 std::ostream& operator<<(std::ostream& os, const Inventory& inv) {
     os << "Inventory (" << inv.items.size() << "/" << inv.maxSize << ")";

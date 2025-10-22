@@ -17,7 +17,7 @@ public:
     //bool removeItem(int index);
     Item useItem(int index);
     bool showInventory() const;
-    int getItemCount() const;
+    //int getItemCount() const;
 
     friend std::ostream& operator << (std::ostream& os, const Inventory& inv);
 };
