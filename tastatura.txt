@@ -1,0 +1,29 @@
+# tastatura.txt
+# 1. Intrarea numelui
+David
+
+# 2.Alegerea clasei:
+# 2 = Rogue (Strength 5, Speed 10, Damage 4, HP 100)
+2
+
+# 1 = Ataca
+1
+
+# 2 = Foloseste un item
+2
+# Indexul itemului: 1 (Health Potion, vindeca +20 HP)
+1
+
+# 3 = Vezi statusul tau
+3
+
+# 1 = Ataca
+1
+
+# 4 = Vezi inventar 
+4
+# 1 = Ataca
+1
+#Repeta pana cand HP Goblin ajunge la 0
+1
+1

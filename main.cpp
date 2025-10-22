@@ -9,17 +9,22 @@ private:
     int health;
     int damage;
 public:
-    Enemy(std::string n, int hp, int dmg) : name(n), health(hp), damage(dmg) {}
+    Enemy (std::string n, int hp, int dmg) : name(n), health(hp), damage(dmg) {}
     bool isAlive() const { return health > 0; }
     void takeDamage(int dmg) {
         health -= dmg;
         std::cout << name << " primeste " << dmg << " damage! HP ramas: " << health << std::endl;
     }
+    int getHealth() const {
+        return health;
+    }
     int attack() const {
         std::cout << name << " ataca si da " << damage << " damage!" << std::endl;
         return damage;
     }
-    std::string getName() const { return name; }
+    std::string getName() const {
+        return name;
+    }
 };
 
 int main() {
@@ -76,11 +81,14 @@ int main() {
     Enemy goblin("Goblin", 50, 8);
 
     while(player.isAlive() && goblin.isAlive()) {
-        std::cout << "\n--- Ce vrei sa faci? ---" << std::endl;
+        std::cout << "Batalie cu " << goblin.getName() << " (HP: " << goblin.getHealth() << ")" << std::endl;
+        //player.showStatus();
+        std::cout << "\nCe vrei sa faci?" << std::endl;
         std::cout << "1. Ataca inamicul" << std::endl;
         std::cout << "2. Foloseste un item" << std::endl;
         std::cout << "3. Vezi statusul tau" << std::endl;
         std::cout << "4. Vezi inventar" << std::endl;
+        std::cout << "5. Termina jocul" << std::endl;
         std::cout << "Alege optiunea: ";
 
         int action;
@@ -112,6 +120,9 @@ int main() {
             case 4:
                 player.showInventory();
                 break;
+            case 5:
+                std::cout << "Ai ales sa termini jocul.";
+                return 0;
             default:
                 std::cout << "Optiune invalida." << std::endl;
                 break;

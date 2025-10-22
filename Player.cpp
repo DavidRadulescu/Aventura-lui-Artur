@@ -1,6 +1,5 @@
 #include "Player.h"
 
-
 Player::Player(std::string name, std::string classType, int strength, int speed, int damage, int maxHP) {
     this->name = name;
     this->classType = classType;
@@ -21,7 +20,7 @@ Player::Player(const Player& other) {
     this->health = other.health;
     this->inventory = other.inventory;
 }
-Player& Player::operator=(const Player& other) {
+Player& Player::operator = (const Player& other) {
     if (this != &other) {
         this->name = other.name;
         this->classType = other.classType;
@@ -33,24 +32,35 @@ Player& Player::operator=(const Player& other) {
     }
     return *this;
 }
-Player::~Player() {};
+Player::~Player() = default;
 
 
 void Player::showStatus() const {
     std::cout << "Informatii caracter: " << std::endl;
     std::cout << "Nume: " << this->name << " (" << this->classType << ")" << std::endl;
-    std::cout << "Strength: " << this->strength<< " | Speed: " << this->speed << " | Damage: " << this->damage << std::endl;
+    std::cout << "Strength: " << this->strength<< " | Speed: " << this->speed << " | Damage: " << this->damage << " | Intelligence: " << this->intelligence << std::endl;
     std::cout << this->health << std::endl;
-    this->inventory.showInventory();
 }
 
 int Player::attack() const {
     int totalDamage = this->damage + this->strength;
-    std::cout << this->name << " ataca si da " << totalDamage << " damage!" << std::endl;
+    totalDamage += this->intelligence / 4;
+    bool isCritical = (rand() % 100) < (this->intelligence * 2);
+    if (isCritical) {
+        totalDamage *= 2;
+        std::cout << this->name << " a nimerit o CRITICA si da " << totalDamage << " damage!" << std::endl;
+    }
+    else
+        std::cout << this->name << " ataca si da " << totalDamage << " damage!" << std::endl;
     return totalDamage;
 }
 
 void Player::takeDamage(int dmg) {
+    bool didDodge = (rand() % 100) < (this->speed * 3);
+    if (didDodge) {
+        dmg /= 2;
+        std::cout << this->name << " EVITA partial atacul!" << std::endl;
+    }
     std::cout << this->name << " primeste " << dmg << " damage!" << std::endl;
     this->health.takeDamage(dmg);
 }
@@ -60,7 +70,18 @@ bool Player::addItemToInventory(const Item& newItem) {
 }
 
 void Player::useItem(int index) {
-    this->inventory.useItem(index);
+    Item usedItem = this->inventory.useItem(index);
+    if (usedItem.getName() == "Unknown")
+        return;
+    if (usedItem.getType() == "Healing") {
+        std::cout << "Aplic efectul de vindecare: +" << usedItem.getEffectValue() << " HP." << std::endl;
+        this->health.heal(usedItem.getEffectValue());
+        std::cout << "HP-ul tau este acum: " << this->health << std::endl;
+    }
+    else {
+        std::cout << "Itemul " << usedItem.getName() << "nu are un efect definit." << std::endl;
+    }
+    //this->inventory.useItem(index);
 }
 
 bool Player::isAlive() const {

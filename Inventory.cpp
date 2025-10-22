@@ -9,7 +9,7 @@ Inventory::Inventory(const Inventory& other) {
     this->items = other.items;
 }
 
-Inventory& Inventory::operator=(const Inventory& other) {
+Inventory& Inventory::operator = (const Inventory& other) {
     if (this != &other) {
         this->maxSize = other.maxSize;
         this->items = other.items;
@@ -17,7 +17,7 @@ Inventory& Inventory::operator=(const Inventory& other) {
     return *this;
 }
 
-Inventory::~Inventory() {}
+Inventory::~Inventory() = default;
 
 bool Inventory::addItem(const Item& newItem) {
     if ((int)this->items.size() == this->maxSize) {
@@ -39,13 +39,16 @@ bool Inventory::removeItem(int index) {
     return true;
 }
 
-bool Inventory::useItem(int index) {
+Item Inventory::useItem(int index) {
+    index = index - 1;
     if (index < 0 || index >= (int)this->items.size()) {
         std::cout << "Nu ai ales un item valid" << std::endl;
-        return false;
+        return Item("", "", 0);
     }
-    this->items[index].use();
-    return true;
+    Item usedItem = this->items[index];
+    this->items.erase(this->items.begin() + index);
+    std::cout << "Ai eliminat item-ul " << usedItem.getName() << " din inventar." << std::endl;
+    return usedItem;
 }
 
 bool Inventory::showInventory() const {

@@ -1,15 +1,15 @@
 #include <iostream>
 #include "HP.h"
 
-HP::HP (int maxHP) {          //pt start doar
+HP::HP(int maxHP) {
     this->maxHP = maxHP;
     this->currentHP = maxHP;
 }
-HP::HP (const HP& other) {
+HP::HP(const HP& other) {
     this->maxHP = other.maxHP;
     this->currentHP = other.currentHP;
 }
-HP& HP::operator = (const HP& other){
+HP& HP::operator = (const HP& other) {
     if (this != &other) {
         this->maxHP = other.maxHP;
         this->currentHP = other.currentHP;
@@ -17,7 +17,7 @@ HP& HP::operator = (const HP& other){
     return *this;
 }
 
-HP::~HP() {};
+HP::~HP() = default;
 
 bool HP::setMaxHP(int newMaxHP) {
     if (newMaxHP < 1)
@@ -38,9 +38,9 @@ bool HP::setHP (int newHP) {
 void HP::heal(int amount) {
     if (amount == 0)
         return;
-    if (amount >= maxHP || amount + currentHP >= maxHP)
-        currentHP = maxHP;
-    currentHP += amount;
+    this->currentHP += amount;
+    if (this->currentHP > this->maxHP)
+        this->currentHP = this->maxHP;
 }
 
 int HP::getMaxHP () const {
