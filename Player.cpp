@@ -1,11 +1,12 @@
 #include "Player.h"
 
-Player::Player(std::string name, std::string classType, int strength, int speed, int damage, int maxHP) {
+Player::Player(std::string name, std::string classType, int strength, int speed, int damage, int maxHP, int intelligence) {
     this->name = name;
     this->classType = classType;
     this->strength = strength;
     this->speed = speed;
     this->damage = damage;
+    this->intelligence = intelligence;
     HP tempHP(maxHP);
     this->health = tempHP;
     Inventory tempInv(10);

@@ -2,6 +2,8 @@
 #include <string>
 #include "Player.h"
 #include "Item.h"
+#include <cstdlib>
+#include <ctime>
 
 class Enemy {
 private:
@@ -28,6 +30,7 @@ public:
 };
 
 int main() {
+    srand(time(0));
     std::string playerName;
     std::cout << "Introduceti numele jucatorului: ";
     std::getline(std::cin, playerName);
@@ -40,7 +43,7 @@ int main() {
     int choice;
     std::cin >> choice;
 
-    Player player(playerName, "", 0, 0, 0); // temporary default stats
+    Player player(playerName, "", 0, 0, 0, 100 , 0); // temporary default stats
 
     switch(choice) {
         case 1:

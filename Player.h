@@ -17,7 +17,7 @@ private:
     Inventory inventory;
 
 public:
-    Player(std::string name, std::string classType, int strength, int speed, int damage, int maxHP = 100);
+    Player(std::string name, std::string classType, int strength, int speed, int damage, int maxHP = 100, int intelligence = 0);
     Player(const Player& other);
     Player& operator=(const Player& other);
     ~Player();
