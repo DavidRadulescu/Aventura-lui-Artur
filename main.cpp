@@ -4,6 +4,7 @@
 #include "Item.h"
 #include <cstdlib>
 #include <ctime>
+#include <limits>
 
 class Enemy {
 private:
@@ -41,7 +42,15 @@ int main() {
     std::cout << "3. Mage (Strength 3, Speed 7, Damage 6, HP 80, Intelligence 10)" << std::endl;
 
     int choice;
-    std::cin >> choice;
+    while (!(std::cin >> choice) || choice < 1 || choice > 3) {
+        if (std::cin.fail()) {
+            std::cout << "Intrare invalida. Va rugam introduceti un numar (1, 2 sau 3): ";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        } else {
+            std::cout << "Clasa invalida. Va rugam introduceti un numar valid (1, 2 sau 3): ";
+        }
+    }
 
     Player player(playerName, "", 0, 0, 0, 100 , 0); // temporary default stats
 
@@ -95,7 +104,11 @@ int main() {
         std::cout << "Alege optiunea: ";
 
         int action;
-        std::cin >> action;
+        while (!(std::cin >> action)) {
+            std::cout << "Intrare invalida. Va rugam introduceti un numar pentru actiune (1-5): ";
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
 
         switch(action) {
             case 1: {
@@ -113,7 +126,11 @@ int main() {
                 player.showInventory();
                 std::cout << "Introdu index-ul itemului de folosit: ";
                 int index;
-                std::cin >> index;
+                while (!(std::cin >> index)) {
+                    std::cout << "Intrare invalida. Va rugam introduceti un numar: ";
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                }
                 player.useItem(index);
                 break;
             }
