@@ -14,4 +14,4 @@ add_executable(Aventura_lui_Artur main.cpp
         Player.cpp
 )
 
-install(TARGETS Aventura_lui_Artur DESTINATION artifacts/bin)
+install(TARGETS Aventura_lui_Artur RUNTIME DESTINATION artifacts/bin)
