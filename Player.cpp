@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(std::string name, std::string classType, int strength, int speed, int damage, int maxHP, int intelligence) {
+Player::Player(const std::string& name, const std::string& classType, int strength, int speed, int damage, int maxHP, int intelligence) {
     this->name = name;
     this->classType = classType;
     this->strength = strength;
@@ -119,6 +119,7 @@ std::string Player::getClass() const {
     return this->classType;
 }
 
+/**
 int Player::getIntelligence() const {
     return this->intelligence;
 }
@@ -134,6 +135,7 @@ int Player::getSpeed() const {
 int Player::getDamage() const {
     return this->damage;
 }
+**/
 
 std::ostream& operator<<(std::ostream& out, const Player& p) {
     out << "Player: " << p.name << " (" << p.classType << ")";

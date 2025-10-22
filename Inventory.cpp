@@ -29,7 +29,7 @@ bool Inventory::addItem(const Item& newItem) {
     return true;
 }
 
-bool Inventory::removeItem(int index) {
+/**bool Inventory::removeItem(int index) {
     if (index < 0 || index >= (int)this->items.size()) {
         std::cout << "Nu ai ales un item valid" << std::endl;
         return false;
@@ -37,7 +37,7 @@ bool Inventory::removeItem(int index) {
     std::cout << "Ai eliminat item-ul " << this->items[index].getName() << std::endl;
     this->items.erase(this->items.begin() + index);
     return true;
-}
+}**/
 
 Item Inventory::useItem(int index) {
     index = index - 1;

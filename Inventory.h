@@ -8,13 +8,13 @@ private:
     std::vector<Item> items;
     int maxSize;
 public:
-    Inventory(int maxSize = 10);
+    explicit Inventory(int maxSize = 10);
     Inventory(const Inventory& other);
     Inventory& operator = (const Inventory& other);
     ~Inventory();
 
     bool addItem(const Item& newItem);
-    bool removeItem(int index);
+    //bool removeItem(int index);
     Item useItem(int index);
     bool showInventory() const;
     int getItemCount() const;

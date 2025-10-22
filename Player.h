@@ -17,7 +17,7 @@ private:
     Inventory inventory;
 
 public:
-    Player(std::string name, std::string classType, int strength, int speed, int damage, int maxHP = 100, int intelligence = 0);
+    Player(const std::string& name, const std::string& classType, int strength, int speed, int damage, int maxHP = 100, int intelligence = 0);
     Player(const Player& other);
     Player& operator=(const Player& other);
     ~Player();
@@ -29,10 +29,10 @@ public:
     void setDamage(int dmg);
 
     std::string getClass() const;
-    int getIntelligence() const;
-    int getStrength() const;
-    int getSpeed() const;
-    int getDamage() const;
+    //int getIntelligence() const;
+    //int getStrength() const;
+    //int getSpeed() const;
+    //int getDamage() const;
 
     void showStatus() const;
     int attack() const;

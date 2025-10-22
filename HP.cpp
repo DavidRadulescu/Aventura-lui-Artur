@@ -19,6 +19,7 @@ HP& HP::operator = (const HP& other) {
 
 HP::~HP() = default;
 
+/**
 bool HP::setMaxHP(int newMaxHP) {
     if (newMaxHP < 1)
         return false;
@@ -27,13 +28,16 @@ bool HP::setMaxHP(int newMaxHP) {
         this->currentHP = this->maxHP;
     return true;
 }
+**/
 
+/**
 bool HP::setHP (int newHP) {
     if (newHP < 1)
         return false;
     this->currentHP = newHP;
     return true;
 }
+**/
 
 void HP::heal(int amount) {
     if (amount == 0)

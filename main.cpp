@@ -24,7 +24,7 @@ public:
         std::cout << name << " ataca si da " << damage << " damage!" << std::endl;
         return damage;
     }
-    std::string getName() const {
+    const std::string& getName() const {
         return name;
     }
 };

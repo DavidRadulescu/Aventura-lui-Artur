@@ -1,7 +1,7 @@
 #include "item.h"
 #include <string>
 
-Item::Item() = default;
+Item::Item() : name(""), type(""),effectValue(0) {};
 
 Item::Item(const std::string& name, const std::string& type, int effectValue) {
     this->name = name;
@@ -33,9 +33,12 @@ std::string Item::getType() const {
 int Item::getEffectValue() const {
     return this->effectValue;
 }
+
+/**
 void Item::use() const {
     std::cout << "Folosesti item-ul " << this->name << " (" << this->type << ") cu adaosul de: " << this->effectValue << std::endl;
 }
+**/
 
 std::ostream& operator << (std::ostream& os, const Item& item) {
     os << "[" << item.name << "] Tip: " << item.type << " Efect: " << item.effectValue;
