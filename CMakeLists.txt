@@ -14,5 +14,7 @@ add_executable(Aventura_lui_Artur main.cpp
         Player.cpp
 )
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/artifacts/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/artifacts/bin")
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/artifacts/bin")
+
 
