@@ -1,7 +1,7 @@
 #include "Enemy.h"
 
 int Enemy::enemyCount = 0;
-Enemy::Enemy(std::string name, int health, int damage) {
+Enemy::Enemy(std::string& name, int health, int damage) {
     this->name = name;
     this->health = health;
     this->maxHealth = health;
