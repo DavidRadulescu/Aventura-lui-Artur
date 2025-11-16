@@ -1,11 +1,16 @@
 # ninja log v6
-3	276	7828393190635228	build.ninja	9e13244aa150aab2
-726	932	7828367053172216	Aventura_lui_Artur.exe	273208fb3c7eb261
+4	284	7850264337157622	build.ninja	9e13244aa150aab2
+1153	5112	7850262707539093	Aventura_lui_Artur.exe	9803c30396b96bbe
 56	864	7828365975973985	CMakeFiles/Aventura_lui_Artur.dir/HP.cpp.obj	e26e4f4af6823dec
-6	726	7828367045972282	CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj	c6abe35f5eec2e94
-46	1052	7828365975876616	CMakeFiles/Aventura_lui_Artur.dir/Inventory.cpp.obj	cbe9d78b30e24fc0
+12	1153	7850262696128213	CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj	c6abe35f5eec2e94
+16	539	7849959104119671	CMakeFiles/Aventura_lui_Artur.dir/Item.cpp.obj	30233a8d3cd3a8d7
+30	962	7850262696320660	CMakeFiles/Aventura_lui_Artur.dir/Inventory.cpp.obj	cbe9d78b30e24fc0
+19	815	7849953928663850	CMakeFiles/Aventura_lui_Artur.dir/Orc.cpp.obj	bcdab0889116de01
 38	923	7828365975786396	CMakeFiles/Aventura_lui_Artur.dir/item.cpp.obj	f085289b45d1c6f6
-22	724	7828367046120646	CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj	411f0ff03816006
-4	314	7828393190635228	build.ninja	9e13244aa150aab2
-5	516	7828393191015212	CMakeFiles/Aventura_lui_Artur.dir/Item.cpp.obj	30233a8d3cd3a8d7
-516	678	7828393196125191	Aventura_lui_Artur.exe	581a53f5b928cb7a
+46	885	7850262696471455	CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj	411f0ff03816006
+18	767	7849951910495330	CMakeFiles/Aventura_lui_Artur.dir/Enemy.cpp.obj	8f234621c89c2dfc
+18	784	7849952988373053	CMakeFiles/Aventura_lui_Artur.dir/Goblin.cpp.obj	17c04c19b02f6175
+17	636	7849954295082653	CMakeFiles/Aventura_lui_Artur.dir/Dragon.cpp.obj	22f8030ae659af39
+20	774	7850265709319928	CMakeFiles/Aventura_lui_Artur.dir/Skeleton.cpp.obj	eebf4453554a6af5
+5	986	7850265709174189	CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj	c6abe35f5eec2e94
+986	4741	7850265718978555	Aventura_lui_Artur.exe	6146fd2251701b63

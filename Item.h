@@ -10,7 +10,7 @@ private:
     int effectValue;
 public:
     Item();
-    explicit Item(const std::string& name = "Unknown", const std::string& type = "Unknown", int effectValue = 0);
+    explicit Item(const std::string& name, const std::string& type, int effectValue);
     Item(const Item& other);
 
     Item& operator = (const Item& other);

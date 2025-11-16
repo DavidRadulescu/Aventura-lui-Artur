@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "GameExceps.h"
 
 Player::Player(const std::string& name, const std::string& classType, int strength, int speed, int damage, int maxHP, int intelligence) {
     this->name = name;
@@ -74,15 +75,13 @@ bool Player::addItemToInventory(const Item& newItem) {
 
 void Player::useItem(int index) {
     Item usedItem = this->inventory.useItem(index);
-    if (usedItem.getName() == "Unknown")
-        return;
     if (usedItem.getType() == "Healing") {
         std::cout << "Aplic efectul de vindecare: +" << usedItem.getEffectValue() << " HP." << std::endl;
         this->health.heal(usedItem.getEffectValue());
         std::cout << "HP-ul tau este acum: " << this->health << std::endl;
     }
     else {
-        std::cout << "Itemul " << usedItem.getName() << "nu are un efect definit." << std::endl;
+        throw CombatException("Itemul " + usedItem.getName() + " nu are (inca) un efect definit.");
     }
     //this->inventory.useItem(index);
 }

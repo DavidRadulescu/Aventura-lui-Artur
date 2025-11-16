@@ -79,6 +79,36 @@ build CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj: CXX_COMPILER__Aventura_l
   OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
   OBJECT_FILE_DIR = CMakeFiles\Aventura_lui_Artur.dir
 
+build CMakeFiles/Aventura_lui_Artur.dir/Enemy.cpp.obj: CXX_COMPILER__Aventura_lui_Artur_unscanned_Debug C$:/Users/dannr/CLionProjects/Aventura-lui-Artur/Enemy.cpp || cmake_object_order_depends_target_Aventura_lui_Artur
+  DEP_FILE = CMakeFiles\Aventura_lui_Artur.dir\Enemy.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
+  OBJECT_FILE_DIR = CMakeFiles\Aventura_lui_Artur.dir
+
+build CMakeFiles/Aventura_lui_Artur.dir/Goblin.cpp.obj: CXX_COMPILER__Aventura_lui_Artur_unscanned_Debug C$:/Users/dannr/CLionProjects/Aventura-lui-Artur/Goblin.cpp || cmake_object_order_depends_target_Aventura_lui_Artur
+  DEP_FILE = CMakeFiles\Aventura_lui_Artur.dir\Goblin.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
+  OBJECT_FILE_DIR = CMakeFiles\Aventura_lui_Artur.dir
+
+build CMakeFiles/Aventura_lui_Artur.dir/Orc.cpp.obj: CXX_COMPILER__Aventura_lui_Artur_unscanned_Debug C$:/Users/dannr/CLionProjects/Aventura-lui-Artur/Orc.cpp || cmake_object_order_depends_target_Aventura_lui_Artur
+  DEP_FILE = CMakeFiles\Aventura_lui_Artur.dir\Orc.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
+  OBJECT_FILE_DIR = CMakeFiles\Aventura_lui_Artur.dir
+
+build CMakeFiles/Aventura_lui_Artur.dir/Dragon.cpp.obj: CXX_COMPILER__Aventura_lui_Artur_unscanned_Debug C$:/Users/dannr/CLionProjects/Aventura-lui-Artur/Dragon.cpp || cmake_object_order_depends_target_Aventura_lui_Artur
+  DEP_FILE = CMakeFiles\Aventura_lui_Artur.dir\Dragon.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
+  OBJECT_FILE_DIR = CMakeFiles\Aventura_lui_Artur.dir
+
+build CMakeFiles/Aventura_lui_Artur.dir/Skeleton.cpp.obj: CXX_COMPILER__Aventura_lui_Artur_unscanned_Debug C$:/Users/dannr/CLionProjects/Aventura-lui-Artur/Skeleton.cpp || cmake_object_order_depends_target_Aventura_lui_Artur
+  DEP_FILE = CMakeFiles\Aventura_lui_Artur.dir\Skeleton.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
+  OBJECT_FILE_DIR = CMakeFiles\Aventura_lui_Artur.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Aventura_lui_Artur
@@ -87,7 +117,7 @@ build CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj: CXX_COMPILER__Aventura_l
 #############################################
 # Link the executable Aventura_lui_Artur.exe
 
-build Aventura_lui_Artur.exe: CXX_EXECUTABLE_LINKER__Aventura_lui_Artur_Debug CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Item.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Inventory.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/HP.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj
+build Aventura_lui_Artur.exe: CXX_EXECUTABLE_LINKER__Aventura_lui_Artur_Debug CMakeFiles/Aventura_lui_Artur.dir/main.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Item.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Inventory.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/HP.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Player.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Enemy.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Goblin.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Orc.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Dragon.cpp.obj CMakeFiles/Aventura_lui_Artur.dir/Skeleton.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Aventura_lui_Artur.dir
@@ -119,6 +149,48 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\dannr\CLionProjects\Aventura-lui-Artur\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.3.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\dannr\CLionProjects\Aventura-lui-Artur\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\dannr\CLionProjects\Aventura-lui-Artur\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2024.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
 
 # =============================================================================
 # Target aliases.

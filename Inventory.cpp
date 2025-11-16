@@ -1,4 +1,5 @@
 #include "Inventory.h"
+#include "GameExceps.h"
 
 Inventory::Inventory(int maxSize) {
     this->maxSize = maxSize;
@@ -22,7 +23,7 @@ Inventory::~Inventory() = default;
 bool Inventory::addItem(const Item& newItem) {
     if ((int)this->items.size() == this->maxSize) {
         std::cout << "Inventarul este plin!" << std::endl;
-        return false;
+        throw InventoryFullException("Inventarul este plin!" + newItem.getName());
     }
     this->items.push_back(newItem);
     std::cout << "Ai adaugat item-ul " << newItem.getName() << std::endl;
@@ -42,8 +43,7 @@ bool Inventory::addItem(const Item& newItem) {
 Item Inventory::useItem(int index) {
     index = index - 1;
     if (index < 0 || index >= (int)this->items.size()) {
-        std::cout << "Nu ai ales un item valid" << std::endl;
-        return Item("", "", 0);
+        throw InvalidItemException("Nu ai ales un item valid (indexul " + std::to_string(index + 1) + " nu exista).");
     }
     Item usedItem = this->items[index];
     this->items.erase(this->items.begin() + index);

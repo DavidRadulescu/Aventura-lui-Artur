@@ -12,6 +12,17 @@ add_executable(Aventura_lui_Artur main.cpp
         Player.h
         HP.cpp
         Player.cpp
+        Enemy.h
+        Enemy.cpp
+        Goblin.h
+        Goblin.cpp
+        Orc.h
+        Orc.cpp
+        Dragon.cpp
+        Dragon.h
+        GameExceps.h
+        Skeleton.cpp
+        Skeleton.h
 )
 
 install(TARGETS Aventura_lui_Artur

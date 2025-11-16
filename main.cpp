@@ -1,34 +1,19 @@
 #include <iostream>
 #include <string>
-#include "Player.h"
-#include "Item.h"
+#include <memory>
+#include <limits>
 #include <cstdlib>
 #include <ctime>
-#include <limits>
+#include <vector>
 
-class Enemy {
-private:
-    std::string name;
-    int health;
-    int damage;
-public:
-    Enemy (std::string n, int hp, int dmg) : name(n), health(hp), damage(dmg) {}
-    bool isAlive() const { return health > 0; }
-    void takeDamage(int dmg) {
-        health -= dmg;
-        std::cout << name << " primeste " << dmg << " damage! HP ramas: " << health << std::endl;
-    }
-    int getHealth() const {
-        return health;
-    }
-    int attack() const {
-        std::cout << name << " ataca si da " << damage << " damage!" << std::endl;
-        return damage;
-    }
-    const std::string& getName() const {
-        return name;
-    }
-};
+#include "Player.h"
+#include "Item.h"
+#include "Enemy.h"
+#include "Goblin.h"
+#include "Orc.h"
+#include "Dragon.h"
+#include "GameExceps.h"
+#include "Skeleton.h"
 
 int main() {
     srand(time(0));
@@ -51,50 +36,47 @@ int main() {
             std::cout << "Clasa invalida. Va rugam introduceti un numar valid (1, 2 sau 3): ";
         }
     }
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-    Player player(playerName, "", 0, 0, 0, 100 , 0); // temporary default stats
+    Player player(playerName, "", 0, 0, 0, 100, 0);
 
     switch(choice) {
         case 1:
-            player.setClass("Warrior");
-            player.setStrength(10);
-            player.setSpeed(5);
-            player.setDamage(5);
-            player.setIntelligence(2);
-            player = Player(playerName, "Warrior", 10, 5, 5, 120);
-            break;
+            player = Player(playerName, "Warrior", 10, 5, 5, 120, 2);
+        break;
         case 2:
-            player.setClass("Rogue");
-            player.setStrength(5);
-            player.setSpeed(10);
-            player.setDamage(4);
-            player.setIntelligence(3);
-            player = Player(playerName, "Rogue", 5, 10, 4, 100);
-            break;
+            player = Player(playerName, "Rogue", 5, 10, 4, 100, 3);
+        break;
         case 3:
-            player.setClass("Mage");
-            player.setStrength(3);
-            player.setSpeed(7);
-            player.setDamage(6);
-            player.setIntelligence(10);
-            player = Player(playerName, "Mage", 3, 7, 6, 80);
-            break;
-        default:
-            std::cout << "Clasa invalida. Se va folosi Warrior default." << std::endl;
-            player = Player(playerName, "Warrior", 10, 5, 5, 120);
-            break;
+            player = Player(playerName, "Mage", 3, 7, 6, 80, 10);
+        break;
     }
 
     std::cout << "\nSalut, " << playerName << "! Ai ales clasa " << player.getClass() << "\n" << std::endl;
+    try {
+        player.addItemToInventory(Item("Health Potion", "Healing", 20));
+        player.addItemToInventory(Item("Mana Potion", "Mana Refill", 10));
+    } catch (const GameException& e) {
+        std::cout << "Eroare la initializarea inventarului: " << e.what() << std::endl;
+    }
+    std::vector<std::unique_ptr<Enemy>> enemies;
+    enemies.push_back(std::make_unique<Goblin>());
+    enemies.push_back(std::make_unique<Skeleton>());
+    enemies.push_back(std::make_unique<Orc>());
+    enemies.push_back(std::make_unique<Dragon>());
 
-    player.addItemToInventory(Item("Health Potion", "Healing", 20));
-    player.addItemToInventory(Item("Mana Potion", "Mana Refill", 10));
+    std::cout << "Inamicii se apropie! Pregateste-te de lupta!" << std::endl;
 
-    Enemy goblin("Goblin", 50, 8);
+    while(player.isAlive() && !enemies.empty()) {
+        std::unique_ptr<Enemy>& currentEnemy = enemies[0];
 
-    while(player.isAlive() && goblin.isAlive()) {
-        std::cout << "Batalie cu " << goblin.getName() << " (HP: " << goblin.getHealth() << ")" << std::endl;
-        //player.showStatus();
+        std::cout << "\n-------------------------------------" << std::endl;
+        std::cout << "Batalie cu " << currentEnemy->getName()
+                  << " (HP: " << currentEnemy->getHealth()
+                  << "/" << currentEnemy->getMaxHealth() << ")" << std::endl;
+        std::cout << "Inamici ramasi: " << enemies.size() << std::endl;
+        std::cout << "-------------------------------------" << std::endl;
+
         std::cout << "\nCe vrei sa faci?" << std::endl;
         std::cout << "1. Ataca inamicul" << std::endl;
         std::cout << "2. Foloseste un item" << std::endl;
@@ -109,49 +91,74 @@ int main() {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
-
-        switch(action) {
-            case 1: {
-                int dmg = player.attack();
-                goblin.takeDamage(dmg);
-                if(goblin.isAlive()) {
-                    int dmgTaken = goblin.attack();
-                    player.takeDamage(dmgTaken);
-                } else {
-                    std::cout << "Ai invins inamicul!" << std::endl;
+        try {
+            switch(action) {
+                case 1: {
+                    int dmg = player.attack();
+                    currentEnemy->takeDamage(dmg);
+                    if(currentEnemy->isAlive()) {
+                        int dmgTaken = currentEnemy->attack();
+                        player.takeDamage(dmgTaken);
+                    } else {
+                        std::cout << "Ai invins inamicul: " << currentEnemy->getName() << "!" << std::endl;
+                        enemies.erase(enemies.begin());
+                        if (!enemies.empty()) {
+                            std::cout << "Un nou inamic apare!" << std::endl;
+                            int chance = rand() % 100;
+                            if (chance < 40) {
+                                std::cout << "Inainte de lupta, ai gasit un cufar!" << std::endl;
+                                Item loot;
+                                int lootType = rand() % 2;
+                                if (lootType == 0) {
+                                    loot = Item("Health Potion", "Healing", 20);
+                                } else {
+                                    loot = Item("Mana Potion", "Mana Refill", 10);
+                                }
+                                player.addItemToInventory(loot);
+                            }
+                        }
+                    }
+                    break;
                 }
-                break;
-            }
-            case 2: {
-                player.showInventory();
-                std::cout << "Introdu index-ul itemului de folosit: ";
-                int index;
-                while (!(std::cin >> index)) {
-                    std::cout << "Intrare invalida. Va rugam introduceti un numar: ";
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                case 2: {
+                    player.showInventory();
+                    std::cout << "Introdu index-ul itemului de folosit: ";
+                    int index;
+                    while (!(std::cin >> index)) {
+                        std::cout << "Intrare invalida. Va rugam introduceti un numar: ";
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    }
+                    player.useItem(index);
+                    break;
                 }
-                player.useItem(index);
+                case 3:
+                    player.showStatus();
+                currentEnemy->displayStatus();
                 break;
-            }
-            case 3:
-                player.showStatus();
+                case 4:
+                    player.showInventory();
                 break;
-            case 4:
-                player.showInventory();
-                break;
-            case 5:
-                std::cout << "Ai ales sa termini jocul.";
+                case 5:
+                    std::cout << "Ai ales sa termini jocul.";
                 return 0;
-            default:
-                std::cout << "Optiune invalida." << std::endl;
+                default:
+                    std::cout << "Optiune invalida." << std::endl;
                 break;
+            }
+        }
+        catch (const GameException& e) {
+            std::cout << "\n[EROARE] " << e.what() << std::endl;
+            std::cout << "Te rugam sa incerci din nou." << std::endl;
+        }
+        catch (const std::exception& e) {
+            std::cout << "\n[EROARE SISTEM] " << e.what() << std::endl;
         }
     }
-
     if(!player.isAlive()) {
         std::cout << "Ai murit. Joc terminat." << std::endl;
     }
-
-    return 0;
+    else if (enemies.empty()) {
+        std::cout << "\nFELICITARI! Ai invins toti inamicii si ai castigat jocul!" << std::endl;
+    }
 }
