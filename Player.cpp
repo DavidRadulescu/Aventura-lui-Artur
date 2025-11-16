@@ -94,7 +94,7 @@ void Player::showInventory() const {
     this->inventory.showInventory();
 }
 
-void Player::setClass(const std::string& cls) {
+/**void Player::setClass(const std::string& cls) {
     this->classType = cls;
 }
 
@@ -113,6 +113,7 @@ void Player::setSpeed(int spd) {
 void Player::setDamage(int dmg) {
     this->damage = dmg;
 }
+**/
 
 std::string Player::getClass() const {
     return this->classType;

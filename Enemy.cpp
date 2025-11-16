@@ -17,9 +17,10 @@ int Enemy::getMaxHealth() const {
     return this->maxHealth;
 }
 
-int Enemy::getEnemyCount() {
+/**int Enemy::getEnemyCount() {
     return enemyCount;
 }
+**/
 
 void Enemy::displayStatus() const {
     doDisplayStatus();
