@@ -12,7 +12,7 @@ protected:
     int damage;
     virtual void doDisplayStatus() const;
 public:
-    Enemy (std::string& name, int health, int damage);
+    Enemy (const std::string& name, int health, int damage);
     int getHealth() const;
     int getMaxHealth() const;
     virtual ~Enemy() = default;
